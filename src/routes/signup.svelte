@@ -10,7 +10,7 @@
 
 		<IconWithText name="account_circle">
 			&nbsp;
-			<input type="email" placeholder="E-mail address" size="28" style="margin-bottom: 0;" />
+			<input type="email" placeholder="E-mail address" size="28" />
 		</IconWithText>
 		<IconWithText name="lock">
 			&nbsp;
@@ -25,3 +25,9 @@
 		<p>Or <a href="/signin">Sign In</a> to an existing account</p>
 	</form>
 </section>
+
+<style>
+	input {
+		margin-bottom: 0;
+	}
+</style>
