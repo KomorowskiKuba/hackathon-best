@@ -53,12 +53,12 @@
 
 <style>
 	ol {
-        counter-reset: li; /* Initiate a counter */
-        list-style: none; /* Remove default numbering */
-        *list-style: decimal; /* Keep using default numbering for IE6/7 */
+        counter-reset: li;
+        list-style: none;
+        *list-style: decimal;
         padding: 0;
         margin-bottom: 4em;
-        text-shadow: 0 1px 0 rgba(255,255,255,.5);
+        text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
     }
 
     div {
