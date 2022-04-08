@@ -3,7 +3,7 @@
 </script>
 
 <div class="content">
-	<img class="darker-span" src="/static/map.jpg" alt="TownMap" />
+	<div class="darker-span" style="background-image: url(map.jpg); width: 1048px; height: 900px" />
 	<div data-tooltip="50°C" class="overlay" id="circle" />
 </div>
 
