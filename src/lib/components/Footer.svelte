@@ -5,6 +5,6 @@
 <RenderOnMount>
 	<footer>
 		<hr />
-		<p>Made by Jakub Smolaga</p>
+		<p>Made by Jakub Smolaga, Sebastian Sekula and Jakub Komorowski</p>
 	</footer>
 </RenderOnMount>
