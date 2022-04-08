@@ -1,6 +1,8 @@
 <header>
-	<nav>
-		<img src="/static/logo-text.png" alt="SensorTownLogo" width="20%" height="20%" />
+	<nav style="margin-bottom: 0;">
+		<a href="/">
+			<img src="/static/logo-text.png" alt="SensorTownLogo" height="30" />
+		</a>
 		<ul>
 			<li>
 				<a href="/">Home</a>
