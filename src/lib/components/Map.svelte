@@ -1,10 +1,11 @@
 <script>
 	import OnHover from './OnHover.svelte';
+	import { goto } from '$app/navigation';
 </script>
 
 <div class="content">
 	<div class="darker-span" style="background-image: url(map.jpg); width: 1048px; height: 900px" />
-	<div data-tooltip="50°C" class="overlay" id="circle" />
+	<div on:click={() => goto('/sensors/1')} data-tooltip="50°C" class="overlay" id="circle" />
 </div>
 
 <svelte:head>
@@ -106,5 +107,6 @@
 		height: 20px;
 		background: red;
 		border-radius: 50%;
+		cursor: pointer;
 	}
 </style>
