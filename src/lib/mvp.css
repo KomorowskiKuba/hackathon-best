@@ -28,15 +28,15 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --color: #ECB365;
+        --color: #E900FF;
         --color-accent: #0097fc4f;
         --color-bg: #333;
         --color-bg-secondary: #555;
-        --color-link: #ECB365;
+        --color-link: #E900FF;
         --color-secondary: #e20de9;
         --color-secondary-accent: #e20de94f;
         --color-shadow: #bbbbbb20;
-        --color-table: #ECB365;
+        --color-table: #E900FF;
         --color-text: #e6e3dc;
         --color-text-secondary: #aaa;
     }

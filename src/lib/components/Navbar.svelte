@@ -1,6 +1,6 @@
 <header>
 	<nav>
-		<a href="/">TODO</a>
+		<a href="/">SensorTown</a>
 		<ul>
 			<li>
 				<a href="/">Home</a>
@@ -8,6 +8,13 @@
 			<li>
 				<a href="/about">About</a>
 			</li>
+			<li>
+				<a href="/signin"><b>Sign In</b></a>
+			</li>
+			<li>
+				<a href="/signup"><em>Sign Up</em></a>
+			</li>
+
 		</ul>
 	</nav>
 </header>
