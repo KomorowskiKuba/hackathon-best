@@ -1,5 +1,4 @@
 <script>
-	import { page } from '$app/stores';
 	import Chart from '$lib/components/charts/Chart.svelte';
 </script>
 
@@ -13,10 +12,10 @@
 			&nbsp;Information
 		</h3>
 		<ul>
-			<li>Id: 1e65aad3-55dc-4343</li>
-			<li>Country: Poland</li>
-			<li>City: Warsaw</li>
-			<li>Category: Temperature</li>
+			<li>Id: <a href="/">1e65aad3-55dc-4343</a></li>
+			<li>Country: <a href="/">Poland</a></li>
+			<li>City: <a href="/">Warsaw</a></li>
+			<li>Category: <a href="/">Temperature</a></li>
 			<li>Author: <a href="/">Jakub Smolaga</a></li>
 		</ul>
 	</aside>
@@ -58,19 +57,11 @@
 				Support the provider
 			</em>
 		</a>
-		<!-- <div style="display: flex; flex-direction: column;">
-			<button>Download CSV</button>
-			<button>Support the provider</button>
-		</div> -->
 	</aside>
 </section>
 <Chart />
 
 <style>
-	.form-list li {
-		display: flex;
-		align-items: center;
-	}
 	.small-button em {
 		padding: 0.4rem;
 		display: flex;
