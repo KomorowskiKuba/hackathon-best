@@ -2,7 +2,7 @@
 	import Chart from '$lib/components/charts/Chart.svelte';
 </script>
 
-<section style="margin-top: -10rem;">
+<section style="margin-top: -4rem;">
 	<header>
 		<h2>Sensor Data</h2>
 	</header>
