@@ -33,6 +33,7 @@
   },
   "type": "module",
   "dependencies": {
-    "store-js": "^2.0.4"
+    "store-js": "^2.0.4",
+    "svelte-frappe-charts": "^1.9.1"
   }
 }
