@@ -11,7 +11,6 @@
 
 	.overlay {
 		opacity: 1;
-		color: black;
 		/*filter: alpha(opacity=0);*/
 		position: absolute;
 		top: 0;
@@ -28,8 +27,11 @@
 	}
 
 	#circle {
-		width: 100px;
-		height: 100px;
+		display: absolute;
+		left: 600px;
+		top: 450px;
+		width: 20px;
+		height: 20px;
 		background: red;
 		border-radius: 50%;
 	}

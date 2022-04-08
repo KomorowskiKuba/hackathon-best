@@ -13,7 +13,7 @@
 			<Card text={"I've got a sensor!"} img_path={'sensors.jpg'} path={'/'} />
 		</div>
 		<div class="column">
-			<Card text={'Show me the data!'} img_path={'data.jpg'} path={'/'} />
+			<Card text={'Show me the data!'} img_path={'data.jpg'} path={'/map'} />
 		</div>
 	</div>
 </header>
