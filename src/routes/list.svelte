@@ -1,6 +1,8 @@
 <script>
 	import ListItem from '$lib/components/ListItem.svelte';
 	import Search from 'svelte-search';
+	import { flip } from 'svelte/animate';
+	import { fade } from 'svelte/transition';
 
 	let value = '';
 
@@ -30,6 +32,10 @@
 			path: '/'
 		}
 	];
+
+	$: filteredSensors = sensors.filter(({ name }) =>
+		name.toLowerCase().includes(value.toLowerCase())
+	);
 </script>
 
 <header>
@@ -41,12 +47,10 @@
 		<button on:click={() => (value = '')}>Clear "{value}"</button>
 	{/if}
 	<ol>
-		{#each sensors as { name, type, img_path }, i}
-			{#if value === ''}
+		{#each filteredSensors as { name, type, img_path }, i (name)}
+			<li animate:flip={{ duration: 400 }} transition:fade={{ duration: 400 }}>
 				<ListItem {name} {type} {img_path} path={'/sensors/' + (i + 1)} />
-			{:else if name.toLowerCase().includes(value.toLowerCase())}
-				<ListItem {name} {type} {img_path} path={'/sensors/' + (i + 1)} />
-			{/if}
+			</li>
 		{/each}
 	</ol>
 </header>
@@ -77,5 +81,18 @@
 		background-color: black;
 		color: white;
 		border-radius: 15px;
+	}
+
+	li {
+		position: relative;
+		display: block;
+		padding: 0.4em 0.4em 0.4em 2em;
+		*padding: 0.4em;
+		margin: 0.5em 0;
+		background: black;
+		box-shadow: 5px 2px 20px #e900ff;
+		color: white;
+		border-radius: 15px;
+		transition: all 0.3s ease-out;
 	}
 </style>
