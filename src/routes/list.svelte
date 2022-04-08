@@ -20,13 +20,13 @@
 			path: '/'
 		},
 		{
-			name: "Jakes's sensor #1",
+			name: "Jake's sensor #1",
 			type: 'Smog',
 			img_path: 'temperature.png',
 			path: '/'
 		},
 		{
-			name: "Jakes's sensor #2",
+			name: "Jake's sensor #2",
 			type: 'Temperature',
 			img_path: 'temperature.png',
 			path: '/'
