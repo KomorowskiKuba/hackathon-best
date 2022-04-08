@@ -1,5 +1,9 @@
+<script>
+	import Map from '$lib/components/Map.svelte';
+</script>
+
 <header>
-	<h1> Build a  better city <u> together </u>  ! </h1>
+	<h1>Build a better city <u> together </u> !</h1>
 	<p>
 		<b>Welcome in the place</b> where <u> we </u> <em>share</em> data.
 	</p>
@@ -11,4 +15,6 @@
 		</a>
 		<br /><br />
 	</p>
+
+	<Map />
 </header>
