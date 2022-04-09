@@ -1,6 +1,7 @@
 <script>
 	import { goto } from '$app/navigation';
-	import SensorStore from '$lib/stores/SensorStore';
+	import { fade } from 'svelte/transition';
+	export let sensors;
 </script>
 
 <div class="content">
@@ -8,13 +9,14 @@
 		class="darker-span"
 		style="background-image: url(map.jpg); background-size: cover; width: 1048px; height: 900px"
 	/>
-	{#each $SensorStore as sensor}
+	{#each sensors as sensor}
 		<div
 			on:click={() => goto(`/sensors/${sensor.id}`)}
 			data-tooltip={sensor.name}
 			class="overlay"
 			id="circle"
 			style={`left: ${sensor.x}px; top: ${sensor.y}px;`}
+			transition:fade
 		/>
 	{/each}
 </div>

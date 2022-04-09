@@ -6,24 +6,25 @@
 	import Map from '$lib/components/Map.svelte';
 	import { flip } from 'svelte/animate';
 	import { fade } from 'svelte/transition';
+	import CategoryPicker from '$lib/components/CategoryPicker.svelte';
 
 	let sliderValue;
-
+	let pickedCategory;
 	let value = '';
 
-	export let sensors = [];
-	SensorStore.subscribe((data) => {
-		sensors = data;
-	});
-
-	$: filteredSensors = $SensorStore.filter(({ name }) =>
-		name.toLowerCase().includes(value.toLowerCase())
-	);
+	const filterSensors = (sensors, text, pickedCategory) => {
+		let result = sensors;
+		result = result.filter(({ name }) => name.toLowerCase().includes(text.toLowerCase()));
+		result = result.filter(({ category }) => category === pickedCategory);
+		return result;
+	};
+	$: filteredSensors = filterSensors($SensorStore, value, pickedCategory);
 </script>
 
 <header>
 	<div>
 		<Search bind:value placeholder="Name..." label="Search by name" />
+		<CategoryPicker bind:pickedCategory />
 	</div>
 	<div>
 		<Switch bind:value={sliderValue} label="Map" fontSize={24} />
@@ -34,7 +35,7 @@
 
 	{#if sliderValue === 'on'}
 		<div transition:fade={{ duration: 200, delay: 400 }}>
-			<Map />
+			<Map sensors={filteredSensors} />
 		</div>
 	{:else}
 		{#if value}
@@ -49,6 +50,7 @@
 		</ol>
 	{/if}
 </header>
+
 <style>
 	ol {
 		counter-reset: li;
