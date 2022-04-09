@@ -73,45 +73,19 @@
     {#if category === ""}
     <h2> Select your sensor's type </h2>
     <div class="row">
+        {#each Array.from(Array(4).keys()).slice(0) as i }
         <div class="column">
-            <SensorTypeTile icon_name={Object.values(types)[0]} text={Object.keys(types)[0]} fun={Object.keys(types)[0]} bind:type={category}/>
+            <SensorTypeTile icon_name={Object.values(types)[i]} text={Object.keys(types)[i]} fun={Object.keys(types)[i]} bind:type={category}/>
         </div>
-        <div class="column">
-            <div class="column">
-                <SensorTypeTile icon_name={Object.values(types)[1]} text={Object.keys(types)[1]} fun={Object.keys(types)[1]} bind:type={category}/>
-            </div>
-        </div>
-        <div class="column">
-            <div class="column">
-                <SensorTypeTile icon_name={Object.values(types)[2]} text={Object.keys(types)[2]} fun={Object.keys(types)[2]} bind:type={category}/>
-            </div>
-        </div>
-        <div class="column">
-            <div class="column">
-                <SensorTypeTile icon_name={Object.values(types)[3]} text={Object.keys(types)[3]} fun={Object.keys(types)[3]} bind:type={category}/>
-            </div>
-        </div>
+        {/each}
     </div>
-    <div class="row"><div class="column">
+    <div class="row">
+        {#each Array.from(Array(8).keys()).slice(4) as i }
         <div class="column">
-            <SensorTypeTile icon_name={Object.values(types)[4]} text={Object.keys(types)[4]} fun={Object.keys(types)[4]} bind:type={category}/>
+            <SensorTypeTile icon_name={Object.values(types)[i]} text={Object.keys(types)[i]} fun={Object.keys(types)[i]} bind:type={category}/>
         </div>
+        {/each}
     </div>
-    <div class="column">
-        <div class="column">
-            <SensorTypeTile icon_name={Object.values(types)[5]} text={Object.keys(types)[5]} fun={Object.keys(types)[5]} bind:type={category}/>
-        </div>
-    </div>
-    <div class="column">
-        <div class="column">
-            <SensorTypeTile icon_name={Object.values(types)[6]} text={Object.keys(types)[6]} fun={Object.keys(types)[6]} bind:type={category}/>
-        </div>
-    </div>
-    <div class="column">
-        <div class="column">
-            <SensorTypeTile icon_name={Object.values(types)[7]} text={Object.keys(types)[7]} fun={Object.keys(types)[7]} bind:type={category}/>
-        </div>
-    </div></div>
     {:else}
         <form style="text-align: center;" on:submit|preventDefault="{handleSubmit}">
             <header style="padding-bottom: 0rem; padding-top: 0;">
