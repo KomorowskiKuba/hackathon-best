@@ -26,6 +26,7 @@
     "prettier-plugin-svelte": "^2.5.0",
     "svelte": "^3.44.0",
     "svelte-check": "^2.2.6",
+    "svelte-clipboard": "^1.0.0",
     "svelte-preprocess": "^4.10.1",
     "svelte-search": "^2.0.0",
     "tslib": "^2.3.1",

@@ -1,5 +1,7 @@
 <script>
     import SensorTypeTile from "$lib/components/SensorTypeTile.svelte";
+    import IconWithText from "$lib/components/IconWithText.svelte";
+    import { goto } from '$app/navigation';
 
     let types = [
         "Temperature",
@@ -13,12 +15,27 @@
     ]
 
     let type = "";
+
+    function hash(x) {
+        var hash = 0, i, chr;
+        if (x.length === 0) return hash;
+        for (i = 0; i < x.length; i++) {
+            chr   = x.charCodeAt(i);
+            hash  = ((hash << 5) - hash) + chr;
+            hash |= 0;
+        }
+        return hash;
+    };
+
+    const handleSubmit = () => {
+        let h = hash(type);
+        goto("/sensor-api/" + h);
+  };
 </script>
 
 <header>
-    <h2> Select your sensor's type </h2>
-
     {#if type === ""}
+    <h2> Select your sensor's type </h2>
     <div class="row">
         <div class="column">
             <SensorTypeTile icon_name={"thermostat"} text={types[0]} fun={types[0]} bind:type={type}/>
@@ -60,11 +77,29 @@
         </div>
     </div></div>
     {:else}
-        <p>{type}</p>
+        <form style="text-align: center;" on:submit|preventDefault="{handleSubmit}">
+            <header style="padding-bottom: 0rem; padding-top: 0;">
+                <h2>{type}</h2>
+            </header>
+    
+            <IconWithText name="looks_one">
+                &nbsp;
+                <input type="text" placeholder="Sensor's id" size="28" />
+            </IconWithText>
+            <IconWithText name="location_on">
+                &nbsp;
+                <input type="text" placeholder="Address" size="28" />
+            </IconWithText>
+            <br />
+            <button type="submit">Continue</button>
+        </form>
     {/if}
 </header>
 
 <style>
+    form {
+        display: inline-block;
+    }
     .row {
         display: flex;
     }
