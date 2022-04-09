@@ -1,5 +1,18 @@
 <script>
+	import SensorStore from '$lib/stores/SensorStore';
 	import Chart from '$lib/components/charts/Chart.svelte';
+	import { page } from '$app/stores';
+
+	let pathname = $page.url.pathname
+    let arr = pathname.split('/');
+	let id = parseInt(arr[arr.length - 1]) - 1;
+
+	export let sensors = [];
+	SensorStore.subscribe((data) => {
+		sensors = data;
+	});
+
+	let sensor = sensors[id];
 </script>
 
 <section style="margin-top: -4rem;">
@@ -12,11 +25,12 @@
 			&nbsp;Information
 		</h3>
 		<ul>
-			<li>Id: <a href="/">1e65aad3-55dc-4343</a></li>
-			<li>Country: <a href="/">Poland</a></li>
-			<li>City: <a href="/">Warsaw</a></li>
-			<li>Category: <a href="/">Temperature</a></li>
-			<li>Author: <a href="/">Jakub Smolaga</a></li>
+			<li>Id: <a href="/">{id}</a></li>
+			<li>Name: <a href="/">{sensor.name}</a></li>
+			<li>Country: <a href="/">{sensor.country}</a></li>
+			<li>City: <a href="/">{sensor.city}</a></li>
+			<li>Category: <a href="/">{sensor.category}</a></li>
+			<li>Author: <a href="/">{sensor.author}</a></li>
 		</ul>
 	</aside>
 	<aside>
