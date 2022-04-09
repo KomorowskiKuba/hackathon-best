@@ -480,3 +480,15 @@ blockquote footer {
     line-height: var(--line-height);
     padding: 1.5rem 0;
 }
+
+.dark-input {
+    display: block;
+    width: 17vw;
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin: 0 auto;
+    border: 2px solid #e900ff;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+}
