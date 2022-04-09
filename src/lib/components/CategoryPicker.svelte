@@ -7,9 +7,7 @@
 <select bind:value={pickedCategory}>
 	{#each types as [name, icon]}
 		<option value={name}>
-			<IconWithText name={icon}>
-				{name}
-			</IconWithText>
+			{name}
 		</option>
 	{/each}
 </select>
@@ -25,5 +23,5 @@
 		background-color: black;
 		color: white;
 		border-radius: 15px;
-}
+	}
 </style>
