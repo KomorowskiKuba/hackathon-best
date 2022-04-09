@@ -5,7 +5,10 @@
 <header>
 	<h1 style="font-size: 50px;">Build a better city <u> together </u> !</h1>
 	<p>
-		<b>Welcome in the place</b> where <u> we </u> <em>share</em> data.
+		<b>Welcome in the place</b> where <u> we </u> <em>share</em> data. <br />
+		SensorTown is a place where <u>everyone</u> can <b>access</b> and <b>share</b> data from
+		<u>their own</u>
+		sensors.
 	</p>
 	<br />
 	<div class="parent">
