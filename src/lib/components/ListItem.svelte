@@ -25,9 +25,3 @@
 		City: {city}
 	</p>
 </div>
-
-<style>
-	img {
-		border-radius: 50%;
-	}
-</style>
