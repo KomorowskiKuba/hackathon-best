@@ -1,4 +1,5 @@
 <script>
+	import SensorStore from '$lib/stores/SensorStore';
 	import ListItem from '$lib/components/ListItem.svelte';
 	import Search from 'svelte-search';
 	import Switch from '$lib/components/Switch.svelte';
@@ -6,36 +7,14 @@
 	import { flip } from 'svelte/animate';
 	import { fade } from 'svelte/transition';
 
+	export let sensors = [];
+	SensorStore.subscribe((data) => {
+		sensors = data;
+	});
+
 	let sliderValue;
 
 	let value = '';
-
-	let sensors = [
-		{
-			name: "Mark's sensor #1",
-			type: 'Smog',
-			img_path: 'temperature.png',
-			path: '/'
-		},
-		{
-			name: "Mark's sensor #2",
-			type: 'Temperature',
-			img_path: 'temperature.png',
-			path: '/'
-		},
-		{
-			name: "Jake's sensor #1",
-			type: 'Smog',
-			img_path: 'temperature.png',
-			path: '/'
-		},
-		{
-			name: "Jake's sensor #2",
-			type: 'Temperature',
-			img_path: 'temperature.png',
-			path: '/'
-		}
-	];
 
 	$: filteredSensors = sensors.filter(({ name }) =>
 		name.toLowerCase().includes(value.toLowerCase())
