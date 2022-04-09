@@ -41,8 +41,9 @@
 </script>
 
 <header>
-    <h1> Your API link: </h1>
-    <h2>{id}</h2>
+	<h1>Thank you!</h1>
+    <h2> Your API link: </h2>
+    <h3>{id}</h3>
         <button use:clickToCopy={"h2"} on:click="{changeIsCopied}"> 
             {#if is_copied === false}
                 Copy
@@ -50,4 +51,5 @@
                 Copied!
             {/if}
         </button>
+		<a href="/list"><em class="small">Go to list</em></a>
 </header>

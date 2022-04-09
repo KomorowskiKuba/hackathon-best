@@ -3,7 +3,6 @@
     import IconWithText from "$lib/components/IconWithText.svelte";
 	import SensorStore from '$lib/stores/SensorStore';
     import { goto } from '$app/navigation';
-import SensorTypes from "$lib/components/SensorTypes.svelte";
 
     let types = {
         "Temperature": "thermostat",
@@ -136,7 +135,7 @@ import SensorTypes from "$lib/components/SensorTypes.svelte";
                 <input type="text" placeholder="Author" size="28" bind:value={author}/>
             </IconWithText>
             <br />
-            <button type="submit">Continue</button>
+            <button type="submit">Add sensor</button>
         </form>
     {/if}
 </header>
