@@ -1,29 +1,55 @@
 <script>
 	import SensorStore from '$lib/stores/SensorStore';
-	import ListItem from '$lib/components/ListItem.svelte';
 	import { flip } from 'svelte/animate';
 	import { fade } from 'svelte/transition';
+	import { user } from '$lib/stores/auth';
+	import Icon from '$lib/components/Icon.svelte';
 
 	export let sensors = [];
 	SensorStore.subscribe((data) => {
 		sensors = data;
 	});
 
-    let username = "Radosław";
-    sensors = sensors.filter((sensor) =>
-        sensor.author.includes(username)
-    );
+	let username = 'Radosław';
+	sensors = sensors.filter((sensor) => sensor.author.includes(username));
 </script>
 
 <header>
+	<h2>Hello {$user}</h2>
+	<h4>Your sensors:</h4>
 	<ol>
 		{#each sensors as { id, name, category, icon_name, city }, i (id)}
 			<li animate:flip={{ duration: 400 }} transition:fade={{ duration: 200 }}>
-				<ListItem {name} {category} {icon_name} path={`/sensors/${id}`} {city} />
+				<div
+					style="display:flex; flex-direction: row; justify-content: flex-start; align-items: center; text-align: left;"
+				>
+					<a href={`/sensors/${id}`}>
+						<span class="material-icons" style="font-size: 75px; margin-right: 15px; color: white;">
+							{icon_name}
+						</span>
+					</a>
+					&nbsp;
+					<p>
+						Sensor: {name}
+					</p>
+					<p>
+						Category: {category}
+					</p>
+					<p>
+						City: {city}
+					</p>
+					<p>
+						<button><Icon name="settings" /></button>
+					</p>
+					<p>
+						<button><Icon name="delete" /></button>
+					</p>
+				</div>
 			</li>
 		{/each}
 	</ol>
 </header>
+
 <style>
 	ol {
 		counter-reset: li;

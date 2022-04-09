@@ -1,9 +1,16 @@
 <script>
 	import IconWithText from '$lib/components/IconWithText.svelte';
+	import { goto } from '$app/navigation';
+	import { user } from '$lib/stores/auth';
+	const login = (e) => {
+		e.preventDefault();
+		$user = 'Jakub Smolaga';
+		goto('my-sensors');
+	};
 </script>
 
 <section id="ideas">
-	<form style="text-align: center;">
+	<form style="text-align: center;" on:submit={login}>
 		<header style="padding-bottom: 0rem; padding-top: 0;">
 			<h2>Sign in</h2>
 		</header>

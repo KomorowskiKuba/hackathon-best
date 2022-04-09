@@ -1,3 +1,7 @@
+<script>
+	import { user } from '$lib/stores/auth';
+</script>
+
 <header>
 	<nav style="margin-bottom: 0;">
 		<a href="/">
@@ -10,12 +14,18 @@
 			<li>
 				<a href="/about">About</a>
 			</li>
-			<li>
-				<a href="/signin"><b class="small">Sign In</b></a>
-			</li>
-			<li>
-				<a href="/signup"><em class="small">Sign Up</em></a>
-			</li>
+			{#if !$user}
+				<li>
+					<a href="/signin"><b class="small">Sign In</b></a>
+				</li>
+				<li>
+					<a href="/signup"><em class="small">Sign Up</em></a>
+				</li>
+			{:else}
+				<li>
+					<a href="/panel">Hello {$user}</a>
+				</li>
+			{/if}
 		</ul>
 	</nav>
 </header>

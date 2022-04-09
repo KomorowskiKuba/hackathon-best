@@ -12,6 +12,14 @@
 			&nbsp;
 			<input class="dark-input" type="email" placeholder="E-mail address" size="28" />
 		</IconWithText>
+		<IconWithText name="badge">
+			&nbsp;
+			<input class="dark-input" type="text" placeholder="First name" size="28" />
+		</IconWithText>
+		<IconWithText name="badge">
+			&nbsp;
+			<input class="dark-input" type="text" placeholder="Last name" size="28" />
+		</IconWithText>
 		<IconWithText name="lock">
 			&nbsp;
 			<input class="dark-input" type="password" placeholder="Password" size="28" />
