@@ -10,6 +10,7 @@ const SensorStore = writable([
         img_path: 'temperature.png',
         x: 100,
         y: 200,
+        icon_name: 'air',
         path: '/',
     },
     {
@@ -21,6 +22,7 @@ const SensorStore = writable([
         img_path: 'temperature.png',
         x: 200,
         y: 50,
+        icon_name: 'air',
         path: '/',
     },
     {
@@ -32,6 +34,7 @@ const SensorStore = writable([
         img_path: 'temperature.png',
         x: 300,
         y: 300,
+        icon_name: 'thermostat',
         path: '/',
     },
 ])

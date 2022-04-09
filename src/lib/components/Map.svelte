@@ -8,7 +8,7 @@
 	{#each $SensorStore as sensor}
 		<div
 			on:click={() => goto('/sensors/1')}
-			data-tooltip="50°C"
+			data-tooltip={sensor.name}
 			class="overlay"
 			id="circle"
 			style={`left: ${sensor.x}px; top: ${sensor.y}px;`}
