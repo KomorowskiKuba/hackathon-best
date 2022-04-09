@@ -1,6 +1,4 @@
 <script>
-	import Icon from '$lib/components/Icon.svelte';
-
 	export let name = '';
 	export let category = '';
 	export let icon_name = '';
