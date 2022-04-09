@@ -7,16 +7,11 @@
 	import { flip } from 'svelte/animate';
 	import { fade } from 'svelte/transition';
 
-	export let sensors = [];
-	SensorStore.subscribe((data) => {
-		sensors = data;
-	});
-
 	let sliderValue;
 
 	let value = '';
 
-	$: filteredSensors = sensors.filter(({ name }) =>
+	$: filteredSensors = $SensorStore.filter(({ name }) =>
 		name.toLowerCase().includes(value.toLowerCase())
 	);
 </script>
@@ -33,15 +28,17 @@
 	</div>
 
 	{#if sliderValue === 'on'}
-		<Map />
+		<div transition:fade={{ duration: 200, delay: 400 }}>
+			<Map />
+		</div>
 	{:else}
 		{#if value}
 			<button on:click={() => (value = '')}>Clear "{value}"</button>
 		{/if}
 		<ol>
-			{#each filteredSensors as { name, category, icon_name, city}, i (name)}
-				<li animate:flip={{ duration: 400 }} transition:fade={{ duration: 400 }}>
-					<ListItem {name} {category} {icon_name} path={'/sensors/' + (i + 1)} city={city} />
+			{#each filteredSensors as { id, name, category, icon_name, city }, i (id)}
+				<li animate:flip={{ duration: 400 }} transition:fade={{ duration: 200 }}>
+					<ListItem {name} {category} {icon_name} path={`/sensors/${id}`} {city} />
 				</li>
 			{/each}
 		</ol>

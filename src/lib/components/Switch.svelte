@@ -42,7 +42,7 @@
 		width: 3em;
 		height: 1.6em;
 		position: relative;
-		margin: 0 0 0 0.5em;
+		margin: 1em 0.5em 1em 0.5em;
 		background: var(--gray);
 		border: none;
 	}
@@ -50,11 +50,11 @@
 	.s--slider button::before {
 		content: '';
 		position: absolute;
-		width: 1.3em;
-		height: 1.3em;
+		width: 1.6em;
+		height: 1.6em;
 		background: #fff;
-		top: 0.13em;
-		right: 1.5em;
+		top: 0.2em;
+		right: 1.8em;
 		transition: transform 0.3s;
 	}
 

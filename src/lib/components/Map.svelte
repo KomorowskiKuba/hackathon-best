@@ -1,11 +1,19 @@
 <script>
-	import OnHover from './OnHover.svelte';
 	import { goto } from '$app/navigation';
+	import SensorStore from '$lib/stores/SensorStore';
 </script>
 
 <div class="content">
 	<div class="darker-span" style="background-image: url(map.jpg); width: 1048px; height: 900px" />
-	<div on:click={() => goto('/sensors/1')} data-tooltip="50°C" class="overlay" id="circle" />
+	{#each $SensorStore as sensor}
+		<div
+			on:click={() => goto(`/sensors/${sensor.id}`)}
+			data-tooltip={sensor.name}
+			class="overlay"
+			id="circle"
+			style={`left: ${sensor.x}px; top: ${sensor.y}px;`}
+		/>
+	{/each}
 </div>
 
 <svelte:head>
