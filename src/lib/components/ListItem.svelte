@@ -1,5 +1,5 @@
 <script>
-	import Icon from "$lib/components/Icon.svelte";
+	import Icon from '$lib/components/Icon.svelte';
 
 	export let name = '';
 	export let category = '';
@@ -12,14 +12,16 @@
 	style="display:flex; flex-direction: row; justify-content: flex-start; align-items: center; text-align: left;"
 >
 	<a href={path}>
-		<span class="material-icons" style="font-size: 75px; margin-right: 15px; color: white;">{icon_name}</span>
+		<span class="material-icons" style="font-size: 75px; margin-right: 15px; color: white;"
+			>{icon_name}</span
+		>
 	</a>
 	&nbsp;
 	<p>
 		Sensor: {name}
 	</p>
 	<p>
-		Type: {category}
+		Category: {category}
 	</p>
 	<p>
 		City: {city}
