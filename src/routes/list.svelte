@@ -1,6 +1,10 @@
 <script>
 	import ListItem from '$lib/components/ListItem.svelte';
 	import Search from 'svelte-search';
+	import Switch from '$lib/components/Switch.svelte';
+	import Map from '$lib/components/Map.svelte';
+
+	let sliderValue;
 
 	let value = '';
 
@@ -36,19 +40,29 @@
 	<div>
 		<Search bind:value placeholder="Name..." label="Search by name" />
 	</div>
+	<div>
+		<Switch bind:value={sliderValue} label="Map" fontSize={24} />
+		<p>
+			<!--Switch is {sliderValue} -->
+		</p>
+	</div>
 
-	{#if value}
-		<button on:click={() => (value = '')}>Clear "{value}"</button>
+	{#if sliderValue === 'on'}
+		<Map />
+	{:else}
+		{#if value}
+			<button on:click={() => (value = '')}>Clear "{value}"</button>
+		{/if}
+		<ol>
+			{#each sensors as { name, type, img_path }, i}
+				{#if value === ''}
+					<ListItem {name} {type} {img_path} path={'/sensors/' + (i + 1)} />
+				{:else if name.toLowerCase().includes(value.toLowerCase())}
+					<ListItem {name} {type} {img_path} path={'/sensors/' + (i + 1)} />
+				{/if}
+			{/each}
+		</ol>
 	{/if}
-	<ol>
-		{#each sensors as { name, type, img_path }, i}
-			{#if value === ''}
-				<ListItem {name} {type} {img_path} path={'/sensors/' + (i + 1)} />
-			{:else if name.toLowerCase().includes(value.toLowerCase())}
-				<ListItem {name} {type} {img_path} path={'/sensors/' + (i + 1)} />
-			{/if}
-		{/each}
-	</ol>
 </header>
 
 <style>
