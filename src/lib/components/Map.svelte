@@ -109,11 +109,10 @@
 
 	#circle {
 		display: absolute;
-		left: 600px;
-		top: 450px;
-		width: 20px;
-		height: 20px;
-		background: red;
+		width: 10px;
+		height: 10px;
+		background: #e20de9;
+		box-shadow: 0px 0px 30px 10px #e20de9;
 		border-radius: 50%;
 		cursor: pointer;
 	}
