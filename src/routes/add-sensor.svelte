@@ -43,6 +43,7 @@
 
         return hash;
     };
+    
     export let sensors = [];
 	SensorStore.subscribe((data) => {
 		sensors = data;
@@ -50,15 +51,16 @@
 
     const handleSubmit = () => {
         let h = hash(category);
-
+        let id = sensors.length
         let new_sensor = {
+            id: id,
             name: name,
             category: category,
             country: country,
             city: city,
             author: author,
             icon_name: types[category],
-            path: '/',
+            path: '/sensors/' + id,
         }
         
         SensorStore.set(

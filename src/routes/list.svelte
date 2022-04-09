@@ -11,6 +11,11 @@
 
 	let value = '';
 
+	export let sensors = [];
+	SensorStore.subscribe((data) => {
+		sensors = data;
+	});
+
 	$: filteredSensors = $SensorStore.filter(({ name }) =>
 		name.toLowerCase().includes(value.toLowerCase())
 	);
@@ -44,7 +49,6 @@
 		</ol>
 	{/if}
 </header>
-
 <style>
 	ol {
 		counter-reset: li;
