@@ -3,6 +3,8 @@
 	import IconWithText from '$lib/components/IconWithText.svelte';
 	import SensorStore from '$lib/stores/SensorStore';
 	import { goto } from '$app/navigation';
+	import { user } from '$lib/stores/auth';
+	import { generateSensor } from '$lib/sensorGenerator';
 
 	let types = {
 		Temperature: 'thermostat',
@@ -55,12 +57,13 @@
 		let h = hash(category);
 		let id = sensors.length;
 		let new_sensor = {
+			...generateSensor(id),
 			id: id,
 			name: name,
 			category: category,
 			country: country,
 			city: city,
-			author: author,
+			author: $user,
 			icon_name: types[category],
 			path: '/sensors/' + id
 		};
