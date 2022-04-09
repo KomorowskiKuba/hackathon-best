@@ -3,16 +3,8 @@
 	import Chart from '$lib/components/charts/Chart.svelte';
 	import { page } from '$app/stores';
 
-	let pathname = $page.url.pathname
-    let arr = pathname.split('/');
-	let id = parseInt(arr[arr.length - 1]) - 1;
-
-	export let sensors = [];
-	SensorStore.subscribe((data) => {
-		sensors = data;
-	});
-
-	let sensor = sensors[id];
+	const id = parseInt($page.params['id']);
+	const sensor = $SensorStore[id];
 </script>
 
 <section style="margin-top: -4rem;">

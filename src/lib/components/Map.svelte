@@ -7,7 +7,7 @@
 	<div class="darker-span" style="background-image: url(map.jpg); width: 1048px; height: 900px" />
 	{#each $SensorStore as sensor}
 		<div
-			on:click={() => goto('/sensors/1')}
+			on:click={() => goto(`/sensors/${sensor.id}`)}
 			data-tooltip={sensor.name}
 			class="overlay"
 			id="circle"

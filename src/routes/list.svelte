@@ -38,7 +38,7 @@
 		<ol>
 			{#each filteredSensors as { id, name, category, icon_name, city }, i (id)}
 				<li animate:flip={{ duration: 400 }} transition:fade={{ duration: 200 }}>
-					<ListItem {name} {category} {icon_name} path={'/sensors/' + (i + 1)} {city} />
+					<ListItem {name} {category} {icon_name} path={`/sensors/${id}`} {city} />
 				</li>
 			{/each}
 		</ol>

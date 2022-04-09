@@ -5,7 +5,7 @@ const randInt = (min, max) =>
 const randElement = (arr) =>
     arr[randInt(0, arr.length)];
 
-const names = ['Radowsław', 'Jakub', 'Michał', 'Maciek', 'Sebastian'];
+const names = ['Radosław', 'Jakub', 'Michał', 'Maciek', 'Sebastian'];
 const lastNames = ['Kowalski', 'Sekuła', 'Komorowski', 'Smolaga'];
 const categories = [
     { name: "Temperature", icon: 'thermostat' },
