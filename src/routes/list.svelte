@@ -28,14 +28,16 @@
 	</div>
 
 	{#if sliderValue === 'on'}
-		<Map />
+		<div transition:fade={{ duration: 200, delay: 400 }}>
+			<Map />
+		</div>
 	{:else}
 		{#if value}
 			<button on:click={() => (value = '')}>Clear "{value}"</button>
 		{/if}
 		<ol>
 			{#each filteredSensors as { name, category, icon_name, city }, i (name)}
-				<li animate:flip={{ duration: 400 }} transition:fade={{ duration: 400 }}>
+				<li animate:flip={{ duration: 400 }} transition:fade={{ duration: 200 }}>
 					<ListItem {name} {category} {icon_name} path={'/sensors/' + (i + 1)} {city} />
 				</li>
 			{/each}
