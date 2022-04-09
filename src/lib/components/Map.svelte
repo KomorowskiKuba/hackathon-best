@@ -4,7 +4,10 @@
 </script>
 
 <div class="content">
-	<div class="darker-span" style="background-image: url(map.jpg); width: 1048px; height: 900px" />
+	<div
+		class="darker-span"
+		style="background-image: url(map.jpg); background-size: cover; width: 1048px; height: 900px"
+	/>
 	{#each $SensorStore as sensor}
 		<div
 			on:click={() => goto(`/sensors/${sensor.id}`)}
@@ -92,7 +95,6 @@
 
 	.overlay {
 		opacity: 1;
-		/*filter: alpha(opacity=0);*/
 		position: absolute;
 		top: 0;
 		bottom: 0;
