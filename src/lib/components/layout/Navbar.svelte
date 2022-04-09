@@ -23,7 +23,15 @@
 				</li>
 			{:else}
 				<li>
-					<a href="/panel">Hello {$user}</a>
+					Hello {$user}
+					<ul>
+						<li>
+							<a href="/my-sensors">My profile</a>
+						</li>
+						<li>
+							<button on:click={() => user.set(false)} class="small">Sign out</button>
+						</li>
+					</ul>
 				</li>
 			{/if}
 		</ul>

@@ -4,14 +4,7 @@
 	import { fade } from 'svelte/transition';
 	import { user } from '$lib/stores/auth';
 	import Icon from '$lib/components/Icon.svelte';
-
-	export let sensors = [];
-	SensorStore.subscribe((data) => {
-		sensors = data;
-	});
-
-	let username = 'Radosław';
-	sensors = sensors.filter((sensor) => sensor.author.includes(username));
+	$: sensors = $SensorStore.filter((sensor) => sensor.author.includes($user));
 </script>
 
 <header>
