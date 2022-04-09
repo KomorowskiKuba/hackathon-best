@@ -8,6 +8,8 @@ const SensorStore = writable([
         city: 'Warsaw',
         author: 'Jakub Smolaga',
         img_path: 'temperature.png',
+        x: 100,
+        y: 200,
         path: '/',
     },
     {
@@ -17,6 +19,8 @@ const SensorStore = writable([
         city: 'Warsaw',
         author: 'Jakub Smolaga',
         img_path: 'temperature.png',
+        x: 200,
+        y: 50,
         path: '/',
     },
     {
@@ -26,6 +30,8 @@ const SensorStore = writable([
         city: 'Warsaw',
         author: 'Sebastian Sekula',
         img_path: 'temperature.png',
+        x: 300,
+        y: 300,
         path: '/',
     },
 ])

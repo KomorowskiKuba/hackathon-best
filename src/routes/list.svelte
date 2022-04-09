@@ -7,16 +7,11 @@
 	import { flip } from 'svelte/animate';
 	import { fade } from 'svelte/transition';
 
-	export let sensors = [];
-	SensorStore.subscribe((data) => {
-		sensors = data;
-	});
-
 	let sliderValue;
 
 	let value = '';
 
-	$: filteredSensors = sensors.filter(({ name }) =>
+	$: filteredSensors = $SensorStore.filter(({ name }) =>
 		name.toLowerCase().includes(value.toLowerCase())
 	);
 </script>
