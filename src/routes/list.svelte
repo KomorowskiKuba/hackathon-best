@@ -14,10 +14,13 @@
 
 	const filterSensors = (sensors, text, pickedCategory) => {
 		let result = sensors;
+
 		result = result.filter(({ name }) => name.toLowerCase().includes(text.toLowerCase()));
 		result = result.filter(({ category }) => category === pickedCategory);
+
 		return result;
 	};
+	
 	$: filteredSensors = filterSensors($SensorStore, value, pickedCategory);
 </script>
 
