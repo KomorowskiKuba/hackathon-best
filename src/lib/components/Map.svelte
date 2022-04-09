@@ -1,11 +1,22 @@
 <script>
+	import SensorStore from '$lib/stores/SensorStore';
 	import OnHover from './OnHover.svelte';
 	import { goto } from '$app/navigation';
+
+	export let sensors = [];
+	SensorStore.subscribe((data) => {
+		sensors = data;
+	});
 </script>
 
 <div class="content">
 	<div class="darker-span" style="background-image: url(map.jpg); width: 1048px; height: 900px" />
-	<div on:click={() => goto('/sensors/1')} data-tooltip="50°C" class="overlay" id="circle" />
+	<div
+		on:click={() => goto('/sensors/1')}
+		data-tooltip={sensors[0].name}
+		class="overlay"
+		id="circle"
+	/>
 </div>
 
 <svelte:head>

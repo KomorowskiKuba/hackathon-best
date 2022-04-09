@@ -39,9 +39,9 @@
 			<button on:click={() => (value = '')}>Clear "{value}"</button>
 		{/if}
 		<ol>
-			{#each filteredSensors as { name, category, icon_name, city}, i (name)}
+			{#each filteredSensors as { name, category, icon_name, city }, i (name)}
 				<li animate:flip={{ duration: 400 }} transition:fade={{ duration: 400 }}>
-					<ListItem {name} {category} {icon_name} path={'/sensors/' + (i + 1)} city={city} />
+					<ListItem {name} {category} {icon_name} path={'/sensors/' + (i + 1)} {city} />
 				</li>
 			{/each}
 		</ol>
