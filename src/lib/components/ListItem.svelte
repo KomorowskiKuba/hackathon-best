@@ -1,6 +1,6 @@
 <script>
 	export let name = '';
-	export let type = '';
+	export let category = '';
 	export let img_path = '';
 	export let path = '';
 </script>
@@ -15,7 +15,7 @@
 		Sensor: {name}
 	</p>
 	<p>
-		Type: {type}
+		Type: {category}
 	</p>
 </div>
 
