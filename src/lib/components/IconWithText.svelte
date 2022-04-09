@@ -12,5 +12,6 @@
 	div {
 		display: flex;
 		align-items: center;
+		margin-bottom: 0.2em;
 	}
 </style>

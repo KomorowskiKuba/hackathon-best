@@ -10,15 +10,15 @@
 
 		<IconWithText name="account_circle">
 			&nbsp;
-			<input type="email" placeholder="E-mail address" size="28" />
+			<input class="dark-input" type="email" placeholder="E-mail address" size="28" />
 		</IconWithText>
 		<IconWithText name="lock">
 			&nbsp;
-			<input type="password" placeholder="Password" size="28" />
+			<input class="dark-input" type="password" placeholder="Password" size="28" />
 		</IconWithText>
 		<IconWithText name="lock">
 			&nbsp;
-			<input type="password" placeholder="Repeat password" size="28" />
+			<input class="dark-input" type="password" placeholder="Repeat password" size="28" />
 		</IconWithText>
 		<br />
 		<button type="submit">Sign Up</button>
