@@ -7,7 +7,7 @@ const SensorStore = writable([
         country: 'Poland',
         city: 'Warsaw',
         author: 'Jakub Smolaga',
-        img_path: 'temperature.png',
+        icon_name: 'air',
         path: '/',
     },
     {
@@ -16,7 +16,7 @@ const SensorStore = writable([
         country: 'Poland',
         city: 'Warsaw',
         author: 'Jakub Smolaga',
-        img_path: 'temperature.png',
+        icon_name: 'air',
         path: '/',
     },
     {
@@ -25,7 +25,7 @@ const SensorStore = writable([
         country: 'Poland',
         city: 'Warsaw',
         author: 'Sebastian Sekula',
-        img_path: 'temperature.png',
+        icon_name: 'thermostat',
         path: '/',
     },
 ])
