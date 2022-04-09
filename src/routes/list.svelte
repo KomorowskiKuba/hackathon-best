@@ -1,8 +1,12 @@
 <script>
 	import ListItem from '$lib/components/ListItem.svelte';
 	import Search from 'svelte-search';
+	import Switch from '$lib/components/Switch.svelte';
+	import Map from '$lib/components/Map.svelte';
 	import { flip } from 'svelte/animate';
 	import { fade } from 'svelte/transition';
+
+	let sliderValue;
 
 	let value = '';
 
@@ -42,17 +46,27 @@
 	<div>
 		<Search bind:value placeholder="Name..." label="Search by name" />
 	</div>
+	<div>
+		<Switch bind:value={sliderValue} label="Map" fontSize={24} />
+		<p>
+			<!--Switch is {sliderValue} -->
+		</p>
+	</div>
 
-	{#if value}
-		<button on:click={() => (value = '')}>Clear "{value}"</button>
+	{#if sliderValue === 'on'}
+		<Map />
+	{:else}
+		{#if value}
+			<button on:click={() => (value = '')}>Clear "{value}"</button>
+		{/if}
+		<ol>
+			{#each filteredSensors as { name, type, img_path }, i (name)}
+				<li animate:flip={{ duration: 400 }} transition:fade={{ duration: 400 }}>
+					<ListItem {name} {type} {img_path} path={'/sensors/' + (i + 1)} />
+				</li>
+			{/each}
+		</ol>
 	{/if}
-	<ol>
-		{#each filteredSensors as { name, type, img_path }, i (name)}
-			<li animate:flip={{ duration: 400 }} transition:fade={{ duration: 400 }}>
-				<ListItem {name} {type} {img_path} path={'/sensors/' + (i + 1)} />
-			</li>
-		{/each}
-	</ol>
 </header>
 
 <style>
