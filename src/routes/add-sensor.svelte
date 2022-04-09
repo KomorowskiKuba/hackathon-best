@@ -128,10 +128,6 @@
 				&nbsp;
 				<input class="dark-input" type="text" placeholder="City" size="28" bind:value={city} />
 			</IconWithText>
-			<IconWithText name="account_circle">
-				&nbsp;
-				<input class="dark-input" type="text" placeholder="Author" size="28" bind:value={author} />
-			</IconWithText>
 			<br />
 			<button type="submit">Add sensor</button>
 		</form>

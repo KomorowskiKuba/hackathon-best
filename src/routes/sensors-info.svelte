@@ -9,7 +9,7 @@
 		provide you with a modern place to store data from you sensors.
 	</p>
 	<p>Do you already have an account?</p>
-	<a href="/add-sensor"><b class="small">Add your sensor</b></a>
+	<a href="/signup"><b class="small">Add your sensor</b></a>
 </header>
 
 <style>

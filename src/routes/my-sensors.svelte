@@ -10,6 +10,9 @@
 <header>
 	<h2>Hello {$user}</h2>
 	<h4>Your sensors:</h4>
+	<a href="/add-sensor">
+		<b> Add new sensor </b>
+	</a>
 	<ol>
 		{#each sensors as { id, name, category, icon_name, city }, i (id)}
 			<li animate:flip={{ duration: 400 }} transition:fade={{ duration: 200 }}>
