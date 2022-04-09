@@ -75,4 +75,15 @@
 		display: flex;
 		align-items: center;
 	}
+	select {
+		display: block;
+		width: 14vw;
+		font-size: 1rem;
+		padding: 0.5rem;
+		margin: auto;
+		border: 2px solid #e900ff;
+		background-color: black;
+		color: white;
+		border-radius: 15px;
+}
 </style>
