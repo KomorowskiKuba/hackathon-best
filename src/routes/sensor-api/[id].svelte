@@ -51,5 +51,5 @@
                 Copied!
             {/if}
         </button>
-		<a href="/list"><em class="small">Go to list</em></a>
+		<a href="/list"><em class="small">Go to map</em></a>
 </header>
